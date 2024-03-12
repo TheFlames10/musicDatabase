@@ -13,9 +13,9 @@ import javafx.collections.ObservableList;
 
 public class Database {
     // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://ambari-node5.csc.calpoly.edu:3306/vgarg";
-    private static final String DB_USER = "vgarg";
-    private static final String DB_PASSWORD = "27720465";
+    private static final String JDBC_URL = "jdbc:mysql://ambari-node5.csc.calpoly.edu:3306/username";
+    private static final String DB_USER = "username";
+    private static final String DB_PASSWORD = "password";
 
     private static final Database instance = new Database();
 
