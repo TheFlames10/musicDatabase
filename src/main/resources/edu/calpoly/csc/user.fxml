@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.calpoly.csc.UserController">
+   <children>
+      <HBox alignment="CENTER_LEFT">
+         <Button fx:id="backButton" text="Logout" onAction="#switchToPrimary"/>
+      </HBox>
+      <Label text="My Mixtapes" style="-fx-font-size: 24px;"/>
+      <HBox alignment="CENTER">
+         <Region />
+         <Button fx:id="primaryButton" style="-fx-background-radius: 8px 0 0 8px;" prefWidth="120.0" text="My Mixtapes" onAction="#primaryButton"/>
+         <Button fx:id="secondaryButton" style="-fx-background-radius: 0 8px 8px 0;" prefWidth="120.0" text="My Collaborations" onAction="#secondaryButton"/>
+         <Region />
+      </HBox>
+      <HBox alignment="CENTER">
+         <TableView fx:id="tableView" layoutX="35.0" layoutY="28.0" prefHeight="200.0" prefWidth="400.0">
+            <columns>
+               <TableColumn prefWidth="250.0" text="Mixtape Name" fx:id="plNameCol" />
+               <TableColumn prefWidth="148.0" text="Creator" fx:id="plCreatorCol" />
+               <TableColumn prefWidth="150.0" text="Public" fx:id="plPublicCol" />
+            </columns>
+         </TableView>
+         <Region prefWidth="20.0"/>
+         <VBox alignment="CENTER" prefWidth="150.0">
+            <Label text="Mixtape Name" />
+            <TextField fx:id="nameField" prefWidth="200.0"/>
+            <Region prefHeight="60.0"/>
+            <Button fx:id="createButton" prefWidth="100.0" text="Create" onAction="#onCreate"/>
+            <Region prefHeight="20.0" />
+            <Button fx:id="deleteButton" prefWidth="100.0" text="Delete" onAction="#onDelete"/>
+         </VBox>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

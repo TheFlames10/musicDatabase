@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.calpoly.csc.PlaylistController">
+    <HBox alignment="CENTER_LEFT">
+        <Button fx:id="backButton" text="Back" onAction="#goBack"/>
+    </HBox>
+    <Label text="Playlist Settings" style="-fx-font-size: 24px;" fx:id="plLabel"/>
+    <HBox alignment="CENTER">
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Mixtape:" />
+        </HBox>
+        <Region prefWidth="420.0" />
+        <HBox alignment="CENTER_RIGHT">
+            <Button text="Toggle Public" onAction="#handleTogglePublic" fx:id="pubButton"/>
+            <Region prefWidth="20.0" />
+        </HBox>
+    </HBox>
+    <HBox alignment="CENTER_LEFT">
+        <VBox>
+            <TableView fx:id="plView" layoutX="35.0" layoutY="28.0" prefHeight="120.0" prefWidth="425.0">
+                <columns>
+                    <TableColumn prefWidth="130.0" text="Song" fx:id="mNameCol" />
+                    <TableColumn prefWidth="90.0" text="Artist" fx:id="mArtistCol" />
+                    <TableColumn prefWidth="75.0" text="Album" fx:id="mAlbumCol" />
+                    <TableColumn prefWidth="60.0" text="Duration" fx:id="mDurationCol" />
+                    <TableColumn prefWidth="50.0" text="Genre" fx:id="mGenreCol" />
+                </columns>
+            </TableView>
+            <Region prefHeight="10.0" />
+            <HBox alignment="CENTER">
+                <Label text="Songs:" />
+                <Region prefWidth="100.0" />
+                <Button text="Add Playlist Entry" onAction="#handleAddPlaylistEntry" fx:id="addButton"/>
+                <Region prefWidth="10.0" />
+                <Button text="Remove Playlist Entry" onAction="#handleRemovePlaylistEntry" fx:id="removeButton" />
+            </HBox>
+            <Region prefHeight="10.0" />
+            <TableView fx:id="songsView" layoutX="35.0" layoutY="28.0" prefHeight="120.0" prefWidth="425.0">
+            <columns>
+                    <TableColumn prefWidth="130.0" text="Song" fx:id="sNameCol" />
+                    <TableColumn prefWidth="90.0" text="Artist" fx:id="sArtistCol" />
+                    <TableColumn prefWidth="75.0" text="Album" fx:id="sAlbumCol" />
+                    <TableColumn prefWidth="60.0" text="Duration" fx:id="sDurationCol" />
+                    <TableColumn prefWidth="50.0" text="Genre" fx:id="sGenreCol" />
+                </columns>
+            </TableView>
+        </VBox>
+        <Region prefWidth="20.0" />
+        <VBox spacing="10.0" alignment="CENTER">
+            <TableView fx:id="collabView" layoutX="35.0" layoutY="28.0" prefHeight="200.0" prefWidth="150.0">
+                <columns>
+                    <TableColumn prefWidth="150.0" text="Collaborators" fx:id="collabCol" />
+                </columns>
+            </TableView>
+            <TextField fx:id="collabField" />
+            <Button text="Add Collaborator" onAction="#handleAddCollaborator" fx:id="acb"/>
+            <Button text="Remove Collaborator" onAction="#handleRemoveCollaborator" fx:id="rcb"/>
+        </VBox>
+    </HBox>
+
+    <!-- Other settings components below (if any) -->
+    
+    <!-- Status label for messages -->
+    <Label fx:id="statusLabel" />
+
+    <!-- Padding for the VBox -->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
